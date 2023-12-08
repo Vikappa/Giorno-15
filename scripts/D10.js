@@ -77,10 +77,10 @@ REGOLE
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
-const dice = function () {
-  let ritorno = Math.floor(Math.random() * 6) + 1
-  return ritorno
-}
+// const dice = function () {
+//   let ritorno = Math.floor(Math.random() * 6) + 1
+//   return ritorno
+// }
 
 // console.log(dice())
 // console.log(dice())
@@ -90,13 +90,13 @@ const dice = function () {
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
 
-const whoIsBigger = function (parm1, parm2) {
-  if (parm1 >= parm2) {
-    return parm1
-  } else {
-    return parm2
-  }
-}
+// const whoIsBigger = function (parm1, parm2) {
+//   if (parm1 >= parm2) {
+//     return parm1
+//   } else {
+//     return parm2
+//   }
+// }
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -104,10 +104,33 @@ const whoIsBigger = function (parm1, parm2) {
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+// const splitMe = function (frase) {
+//   let ritorno = []
+//   ritorno = frase.split(" ")
+//   return ritorno
+// }
+
+// console.log(splitMe("I love coding"))
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+// let testString = "Lorem ipsum dolor sit amet consectetur adipisicing elit"
+// const deleteOne = function (string, param) {
+//   let temp
+//   if (param) {
+//     temp = string.substring(1, string.length)
+//     return temp
+//   } else {
+//     temp = string.substring(0, string.length - 1)
+//     return temp
+//   }
+// }
+
+// console.log(deleteOne(testString, true))
+// console.log(deleteOne(testString, false))
+
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
@@ -115,13 +138,55 @@ const whoIsBigger = function (parm1, parm2) {
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+// const onlyLetters = function (stringtoparse) {
+//   let temp = stringtoparse.replace(/[0-9]?/g, "");
+
+
+//   return temp
+// }
+
+// console.log(onlyLetters("I have 5 dogs, 3 green and 2 yellow. And one space cat!")
+// )
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+// const isThisAnEmail = function (email) {
+//   let emailStringata = [...email]
+//   let parolaDotDominio
+
+//   for (let x = 0; x < emailStringata.length; x++) {
+//     if (emailStringata[x] === "@") {
+//       parolaDotDominio = emailStringata.slice(x + 1, emailStringata.length)
+//       let parolaDotDominioStringata = [...parolaDotDominio]
+//       for (let y = 0; y < parolaDotDominioStringata.length; y++) {
+//         if (parolaDotDominioStringata[y] === ".") {
+//           if (emailStringata.length > parolaDotDominioStringata.length + 1) {
+//             return true
+//           }
+//         }
+//       }
+//     }
+//   }
+//   return false
+// }
+
+// console.log(isThisAnEmail("vincenzo.e.costantini@gmail.com"))
+// console.log(isThisAnEmail("vincenzoChiocciolaVattelappescamail.com"))
+// console.log(isThisAnEmail("vincenzo@Costantini"))
+// console.log(isThisAnEmail("@Costantini"))
+// console.log(isThisAnEmail("@vincenzo.com"))
+// console.log(isThisAnEmail("Costantini@Vincenzo"))
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+
+const whatDayIsIt = function () {
+
+}
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
