@@ -12,31 +12,66 @@ REGOLE
 /* ESERCIZIO A
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
-
+// const sum = 20 + 10
+// console.log(sum)
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
+// let random = function () {
+//   let ritorno = Math.floor(Math.random() * 21)
+//   return ritorno
+// }
+// console.log(random())
+// console.log(random())
+// console.log(random())
 
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
-
+const me = {
+  name: "Vincenzo",
+  surname: "Costantini",
+  age: "29"
+}
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
+const removeAge = function (obg) {
+  delete obg.age
+}
+console.log(me)
+removeAge(me)
+console.log(me)
 
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
+const linguaggiCheConosco = ['html', 'css', 'javascript', 'java']
+
+const aggiungiskill = function (target, array) {
+  target.skill = array
+}
+aggiungiskill(me, linguaggiCheConosco)
+console.log(me)
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
+const aggiungiAllaListaSkills = function (target, newSkill) {
+  target.skill.push(newSkill)
+}
+aggiungiAllaListaSkills(me, "angular")
+console.log(me)
 
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+const togliUltimaSkill = function (target) {
+  me.skill.splice(me.skill.length - 1, 1)
+}
 
+togliUltimaSkill(me)
+console.log(me)
 // Funzioni
 
 /* ESERCIZIO 1
