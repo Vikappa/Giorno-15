@@ -183,10 +183,25 @@ REGOLE
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 
+// const whatDayIsIt = function () {
 
-const whatDayIsIt = function () {
+//   const dayoftheweek = [
+//     "lunedì",
+//     "martedì",
+//     "mercoledì",
+//     "giovedì",
+//     "venerdì",
+//     "sabato",
+//     "domenica"
+//   ]
 
-}
+//   const now = new Date()
+//   const day = now.getDay()
+//   dayoftheweek[day]
+//   return dayoftheweek[day]
+// }
+
+// console.log(whatDayIsIt())
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -201,13 +216,96 @@ const whatDayIsIt = function () {
   }
 */
 
+// const rollTheDices = function (param) {
+//   const ritorno = {}
+//   ritorno.values = []
+//   ritorno.sum = 0
+//   for (let i = 0; i < param; i++) {
+//     ritorno.values.push(dice())
+//   }
+//   for (let x = 0; x < ritorno.values.length; x++) {
+//     ritorno.sum += ritorno.values[x]
+//   }
+//   return ritorno
+// }
+
+// console.log(rollTheDices(4))
+
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+// const howManyDays = function (data) {
+//   const dayNow = Date.now()
+
+//   let dataDaconfrontare = new Date(data).getTime()
+//   let differenza = Math.abs(dayNow - dataDaconfrontare)
+//   let giorni = Math.floor((((differenza / 1000) / 60) / 60) / 24)
+//   return giorni
+// }
+
+// console.log(howManyDays("12-10-2022"))
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+// const isTodayMyBirthday = function () {
+//   const oggi = new Date()
+//   const giornoCorrente = oggi.getDate()
+//   const meseCorrente = oggi.getMonth() + 1
+
+//   let parametroCompleanno = "1994-12-09" //Parametro data di nascita  <--------- personalizza qui il metodo per test, lascia formattazione anno-mese-giorno o si rompe il giochino
+
+//   const meseParametro = function (parametroCompleanno) {
+
+//     parametroCompleanno.split('')
+//     let ritorno
+//     primosplit = 0
+//     secondoSplit = 0
+
+//     for (let i = 0; i < parametroCompleanno.length; i++) {
+
+//       if (parametroCompleanno[i] === "-" && primosplit > 0) {
+//         secondoSplit = i
+//       }
+//       if (parametroCompleanno[i] === "-" && primosplit === 0) {
+//         primosplit = i
+//       }
+//     }
+//     ritorno = parametroCompleanno.slice(primosplit + 1, secondoSplit)
+//     return ritorno
+//   }
+
+//   const giornoParametro = function (parametroCompleanno) {
+
+//     parametroCompleanno.split('')
+//     let index = 0
+//     let ritorno = ""
+//     let nSplit = 0
+//     for (let i = 0; i < parametroCompleanno.length; i++) {
+//       if (parametroCompleanno[i] === "-") {
+//         nSplit++
+//       }
+//       if (nSplit === 2 && parametroCompleanno[i] !== "-") {
+//         ritorno = ritorno + parametroCompleanno[i]
+//       }
+//     }
+//     return ritorno
+//   }
+
+//   console.log("giorno compleanno " + parseInt(giornoParametro(parametroCompleanno)) + " mese compleanno " + meseParametro(parametroCompleanno))
+//   console.log("data corrente " + giornoCorrente + " mese corrente " + meseCorrente)
+//   if (parseInt(giornoCorrente) === parseInt(giornoParametro(parametroCompleanno)) && parseInt(meseCorrente) === parseInt(meseParametro(parametroCompleanno))) {
+//     return true
+//   } else {
+//     return false
+//   }
+
+// }
+
+// console.log(isTodayMyBirthday())
+
 
 // Arrays & Oggetti
 
@@ -285,26 +383,26 @@ const whatDayIsIt = function () {
 
 /* ESERCIZIO 27
   Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
-
+ 
   Esempio:
   halfTree(3)
-
+ 
   *
   **
   ***
-
+ 
 */
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
-
+ 
   Esempio:
   tree(3)
-
+ 
     *
    ***
   *****
-
+ 
 */
 
 /* ESERCIZIO 29
