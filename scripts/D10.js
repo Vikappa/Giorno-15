@@ -316,6 +316,19 @@ REGOLE
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+// const deleteProp = function (obg, string) {
+//   delete obg.string
+//   return obg
+// }
+
+// let oggetto = {
+//   num: 12,
+//   string: "stringa casuale"
+// }
+
+// console.log(oggetto)
+// console.log(deleteProp(oggetto, "string"))
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
