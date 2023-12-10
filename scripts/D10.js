@@ -373,8 +373,13 @@ const onlyTheYears = function (arrayoggetto) {
 */
 
 const onlyInLastMillennium = function (arrayTarget) {
-  const arrayPost2k = arrayTarget.map()
-
+  const arrayPost2k = []
+  for (let i = 0; i < arrayTarget.length; i++) {
+    if (arrayTarget[i].Year > 2000) {
+      arrayPost2k.push(arrayTarget[i])
+    }
+  }
+  return arrayPost2k
 }
 
 
@@ -382,18 +387,62 @@ const onlyInLastMillennium = function (arrayTarget) {
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
+const sumAllTheYears = function (arrayTarget) {
+  let ritorno = 0
+  arrayTarget.forEach(element => {
+    ritorno += parseInt(element.Year)
+  });
+  return ritorno
+}
+
+
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
+
+const searchByTitle = function (stringToSearch, arrayToSearchFrom) {
+  const listaRes = []
+  for (let i = 0; i < arrayToSearchFrom.length; i++) {
+    if (stringToSearch === arrayToSearchFrom[i].Title) {
+      listaRes.push(arrayToSearchFrom[i])
+    }
+  }
+  return listaRes
+}
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+const searchAndDivide = function (stringToSearch, arrayToSearchFrom) {
+  const ritorno = {
+    match: [],
+    unmatch: []
+  }
+  for (let i = 0; i < arrayToSearchFrom.length; i++) {
+    if (stringToSearch === arrayToSearchFrom[i].Title) {
+      ritorno.match.push(arrayToSearchFrom[i])
+    } else {
+      ritorno.unmatch.push(arrayToSearchFrom[i])
+    }
+  }
+  return ritorno
+}
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
+const removeIndex = function (index, arrayToSearchFrom) {
+  let ritorno = []
+  for (let i = 0; i < arrayToSearchFrom.length; i++) {
+    if (i !== index) {
+      ritorno.push(arrayToSearchFrom[i])
+    }
+  }
+  return ritorno
+}
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -401,13 +450,33 @@ const onlyInLastMillennium = function (arrayTarget) {
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+const returnidContaier = function () {
+  const container = document.getElementById("container")
+  return container
+}
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
+const getTd = function () {
+  let tdPagina = []
+  tdPagina = document.getElementsByTagName("td")
+  console.log(typeof tdPagina)
+  console.log(tdPagina)
+  return tdPagina
+}
+
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+
+const printEveryTd = function () {
+  const everyTd = getTd();
+  for (let i = 0; i < everyTd.length; i++) {
+    console.log(everyTd[i].innerText);
+  }
+}
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
@@ -572,5 +641,4 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
-
-console.log(onlyTheYears(movies))
+printEveryTd()
