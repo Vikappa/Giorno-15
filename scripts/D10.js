@@ -482,17 +482,51 @@ const printEveryTd = function () {
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+const paintItRed = function () {
+  let elementiancora = document.getElementsByTagName("a")
+
+  //let elementiancora2 = document.getElementById("af").style.backgroundColor = "red"
+  for (let i = 0; i < elementiancora.length; i++) {
+    elementiancora[i].style = "background-color: red"
+  }
+}
+
+
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+
+const addListItem = function (nuovoElemento) {
+  const lista = document.getElementById("myList")
+  const nuovoLi = document.createElement("li")
+  nuovoLi.textContent = nuovoElemento
+  lista.append(nuovoLi)
+}
+
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+const TNT = function () {
+  const lista = document.getElementById("myList")
+  while (lista.firstChild) {
+    lista.removeChild(lista.firstChild);
+  }
+}
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+const addClass = function () {
+  const trs = document.getElementsByTagName("tr")
+  for (let i = 0; i < trs.length; i++) {
+    trs[i].classList = "test"
+  }
+}
+
 
 // [EXTRA] JS Avanzato
 
@@ -508,6 +542,18 @@ const printEveryTd = function () {
  
 */
 
+const halftree = function (nPiani) {
+  let albero = ""
+  for (let i = 1; i < nPiani + 1; i++) {
+    let pianoArray = ""
+    for (let x = 1; x < i + 1; x++) {
+      pianoArray = pianoArray + `*`
+    }
+    albero = albero + `${pianoArray}\n`
+  }
+  console.log(albero)
+}
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
  
@@ -520,9 +566,53 @@ const printEveryTd = function () {
  
 */
 
+const tree = function (nPiani) {
+  let albero = ""
+
+  for (let i = 1; i < nPiani + 1; i++) {
+    let ramo = ""
+
+    for (let j = 0; j < nPiani - i; j++) {
+      ramo += " "
+    }
+
+    for (let k = 0; k < 2 * i - 1; k++) {
+      ramo += "*"
+    }
+
+    albero += `${ramo}\n`
+  }
+
+  console.log(albero)
+}
+
+tree(4)
+
+
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+const isItPrime = function (numeroTest) {
+  const isDivisibile = function (numeroTest) {
+    for (let i = 2; i < numeroTest; i++) {
+      console.log("Input " + numeroTest + " / " + i + " = " + (numeroTest / i))
+      if (numeroTest % i === 0) {
+        console.log("Trovato divisore: " + i + ". Input " + numeroTest + " / " + i + " = 0")
+        return true
+      }
+      console.log("Proseguo")
+    }
+    return false
+  }
+  if (isDivisibile(numeroTest)) {
+    return false
+  } else {
+    console.log("Nessun divisore trovato")
+    return true
+  }
+}
+
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
@@ -641,4 +731,3 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
-printEveryTd()
